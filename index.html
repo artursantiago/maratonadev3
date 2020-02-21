@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doe Sangue!</title>
+
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <img 
+            class="logo"
+            src="/logo.png" 
+            alt="Imagem de DOE">
+        <h2>Your donation matters</h2>
+        <p>Up to 3 lives with 1 donation</p>
+        <p>More than 38.000 are needed every day</p>
+        <p>Only 1,9% of the brazilian population, donate blood.</p>
+
+        <button>Wanna help</button>
+    </header>
+
+
+    <section class="form hide">
+        <h2>Enter donor list</h2>
+        <form action="/" method="POST">
+            <input 
+                type="text" 
+                name="name" 
+                placeholder="Full name"
+            >
+            <input 
+                type="text" 
+                name="email" 
+                placeholder="Email"
+            >
+            <input 
+            type="text" 
+            name="blood" 
+            placeholder="Blood type"
+            >
+
+            <button>Wanna help</button>
+        </form>
+    </section>
+
+    <main>
+        <h2>Past <span>donors</span></h2>
+
+        <section class="donors">
+
+            {% for donor in donors %}
+
+                <div class="donor">
+                    <div class="blood">{{ donor.blood }}</div>
+                    <p>{{ donor.name }}</p>
+                </div>
+                
+            {%endfor%}
+
+        </section>
+    </main>
+
+    <footer>Done with the Rocketseat! 🤜🤛</footer>
+
+    <script src="/scripts.js"></script>
+</body>
+
+</html>
